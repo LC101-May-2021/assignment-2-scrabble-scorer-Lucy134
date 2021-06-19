@@ -20,7 +20,7 @@ const vowels = ['A', 'E', 'I', 'O', 'U', 'Y'];
 
 function initialPrompt() {
   console.log("Let's play some scrabble! \n");
-  let word = input.question("Enter a word to score: ");
+  let word = input.question("Enter a word to score: " );
   
   let choice = scorerPrompt();
   console.log(scoringAlgorithms[choice](word));
@@ -63,7 +63,7 @@ function scrabbleScore(word) {
   for(let i = 0; i < word.length; i++){
     score += newPointStructure[word[i]];
     //letterPoints +=`Points for '${word[i]}': ${newPointStructure[word[i]]} \n`;
-  } scoreTot += `Total score for ${word}: ${score}`;
+  } scoreTot += `Total score for '${word}': ${score}`;
   return scoreTot;
 }
 function oldScrabbleScorer(word) {
@@ -85,7 +85,7 @@ function oldScrabbleScorer(word) {
 const scoringAlgorithms = [simpleScore, vowelBonusScore,scrabbleScore];
 
 function scorerPrompt() {
-  console.log("Which scoring algorithm would you like to use?\n 0 - Simple: One point per character \n 1 - Vowel Bonus: Vowels are worth 3 points \n 2 - Scrabble: Uses scrabble point system \n");
+  console.log("\nWhich scoring algorithm would you like to use?\n 0 - Simple: One point per character \n 1 - Vowel Bonus: Vowels are worth 3 points \n 2 - Scrabble: Uses scrabble point system \n");
 let choice = input.question("Enter 0, 1, or 2: ");
 choice = Number(choice);
 return choice;
