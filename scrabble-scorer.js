@@ -28,7 +28,7 @@ function initialPrompt() {
 };
 let simpleScore = {name: "Simple Score",
   description: "Each letter is worth 1 point.",
-  scoreFunction: function (word) {
+  scoreFunction: function simpleScore(word) {
   word = word.toUpperCase();
   let score = word.length;
   console.log(`Total score for ${word}: ${score}`);
@@ -39,7 +39,7 @@ let simpleScore = {name: "Simple Score",
 let vowelBonusScore = {
   name: "Bonus Vowels",
   description: "Vowels are 3 pts, consonants are 1 pt.",
-  scoreFunction: function (word) {
+  scoreFunction: function vowelBonusScore(word) {
   word = word.toUpperCase();
   
   let score = 0;
@@ -63,7 +63,7 @@ let vowelBonusScore = {
 let scrabbleScore = {
   name: "Scrabble",
   description: "The traditional scoring algorithm.",
-  scoreFunction: function(word){
+  scoreFunction: function scrabbleScore(word){
   word = word.toLowerCase();
   //letterPoints = "";
   scoreTot = "";
