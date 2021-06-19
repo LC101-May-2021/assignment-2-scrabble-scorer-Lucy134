@@ -23,12 +23,12 @@ function initialPrompt() {
   let word = input.question("Enter a word to score: " );
   
   let choice = scorerPrompt();
-  scoringAlgorithms[choice].scoreFunction(word);
+  scoringAlgorithms[choice].scoringFunction(word);
 
 };
 let simpleScore = {name: "Simple Score",
   description: "Each letter is worth 1 point.",
-  scoreFunction: function simpleScore(word) {
+  scoringFunction: function simpleScore(word) {
   word = word.toUpperCase();
   let score = word.length;
   console.log(`Total score for ${word}: ${score}`);
@@ -39,7 +39,7 @@ let simpleScore = {name: "Simple Score",
 let vowelBonusScore = {
   name: "Bonus Vowels",
   description: "Vowels are 3 pts, consonants are 1 pt.",
-  scoreFunction: function vowelBonusScore(word) {
+  scoringFunction: function vowelBonusScore(word) {
   word = word.toUpperCase();
   
   let score = 0;
@@ -63,7 +63,7 @@ let vowelBonusScore = {
 let scrabbleScore = {
   name: "Scrabble",
   description: "The traditional scoring algorithm.",
-  scoreFunction: function scrabbleScore(word){
+  scoringFunction: function scrabbleScore(word){
   word = word.toLowerCase();
   //letterPoints = "";
   scoreTot = "";
