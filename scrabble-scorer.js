@@ -23,21 +23,21 @@ function initialPrompt() {
   let word = input.question("Enter a word to score: " );
   
   let choice = scorerPrompt();
-  console.log(scoringAlgorithms[choice](word));
+  scoringAlgorithms[choice](word);
 
 };
 
 function simpleScore(word) {
   word = word.toUpperCase();
   let score = word.length;
-  let scoreTot = `Total score for ${word}: ${score}`;
+  console.log(`Total score for ${word}: ${score}`);
   
-  return scoreTot;
+  return score;
 }
 
 function vowelBonusScore(word) {
   word = word.toUpperCase();
-  let scoreTot = "";
+  
   let score = 0;
   for (let i = 0; i < word.length; i++) {
     
@@ -50,8 +50,8 @@ function vowelBonusScore(word) {
       
     }
     
-  } scoreTot += `Total score for ${word}: ${score}`;
-  return scoreTot;
+  } console.log(`Total score for ${word}: ${score}`);
+  return score;
 }
 
 function scrabbleScore(word) {
@@ -63,8 +63,8 @@ function scrabbleScore(word) {
   for(let i = 0; i < word.length; i++){
     score += newPointStructure[word[i]];
     //letterPoints +=`Points for '${word[i]}': ${newPointStructure[word[i]]} \n`;
-  } scoreTot += `Total score for '${word}': ${score}`;
-  return scoreTot;
+  } console.log(`Total score for '${word}': ${score}`);
+  return score;
 }
 function oldScrabbleScorer(word) {
   word = word.toUpperCase();
